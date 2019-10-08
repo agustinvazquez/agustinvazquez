@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recursos</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <style>
+        .form-content {
+            margin: 20px auto;
+        }
+
+        /*** NoDisplay ***/
+        #datos-def {
+            display: none;
+        }
+
+        #guardar-recurso {
+            display: none;
+        }
+
+        #form-suscripcion {
+            display: none;
+        }
+
+        /*
+        #boton-suscripcion {
+            display: none;
+        }
+*/
+        /*** ToPersonalize ***/
+        /* Colors */
+        .bg-primary-ft {
+            background-color: #007bff !important;
+        }
+
+        .bg-secondary-ft {
+            background-color: #6c757d !important;
+        }
+
+        .bg-success-ft {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger-ft {
+            background-color: #dc3545 !important;
+        }
+
+        .bg-warning-ft {
+            background-color: #ffc107 !important;
+        }
+
+        .bg-info-ft {
+            background-color: #17a2b8 !important;
+        }
+
+        .bg-light-ft {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-dark-ft {
+            background-color: #343a40 !important;
+        }
+
+        .bg-white-ft {
+            background-color: #fff !important;
+        }
+
+        .bg-transparent-ft {
+            background-color: transparent !important;
+        }
+
+        /* Text Colors */
+        .text-primary-ft {
+            color: #007bff !important;
+        }
+
+        .text-secondary-ft {
+            color: #6c757d !important;
+        }
+
+        .text-success-ft {
+            color: #28a745 !important;
+        }
+
+        .text-danger-ft {
+            color: #dc3545 !important;
+        }
+
+        .text-warning-ft {
+            color: #ffc107 !important;
+        }
+
+        .text-light-ft {
+            color: #f8f9fa !important;
+        }
+
+        .text-dark-ft {
+            color: #343a40 !important;
+        }
+
+        /*  Rectangular Size */
+        .sm-rectangle-ft{
+            height: 30pt;
+            width: 60pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-rectangle-ft{
+            height: 35pt;
+            width: 100pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-rectangle-ft{
+            height: 40pt;
+            width: 135pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Circular */
+        .round{
+            border-radius: 1500px;
+        }
+
+        /* Size */
+        .sm-size-ft {
+            width: 35pt;
+            height: 35pt;
+
+            font-size: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-size-ft {
+            width: 47pt;
+            height: 47pt;
+
+            font-size: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-size-ft {
+            width: 60pt;
+            height: 60pt;
+            
+            font-size: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Image */
+        .img-sm-ft {
+            max-width: 23pt;
+            max-height: 23pt;
+        }
+
+        .img-md-ft {
+            max-width: 30pt;
+            max-height: 30pt;
+        }
+
+        .img-lg-ft {
+            max-width: 40pt;
+            max-height: 40pt;
+        }
+
+        .img-logo-ft {
+            max-width: 13.8pt;
+            max-height: 13.8pt;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        .chk-bgcolor {
+            text-align: left;
+        }
+
+        #btn-suscripcion-ft {
+            overflow: hidden;
+        }
+    </style>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-xs-12 col-md-8 col-lg-8 form-content">
+                <form>
+                    <div class="row" id="tipo-recurso">
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Tipo de recurso:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <select id="lstTipoRecurso">
+                                <option value="0">Medio de suscripcion</option>
+                                <option value="1">Opcion</option>
+                                <option value="2">Galeria de imagenes</option>
+                                <option value="3">Plantilla de texto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row" id="datos-def">
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Origen del dato:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <select id="lstOrigenes">
+                                <option value="0">Seleccione...</option>
+                                <!-- Opciones de la api -->
+                                <option value="1">Origen 1</option>
+                                <option value="2">Origen 2</option>
+                                <option value="3">Origen 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Nombre interno:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <input type="text" id="txtNombreInterno">
+                        </div>
+
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Identificacion:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <div class="row">
+                                <div class="col-xs-1 col-md-1 col-lg-1">
+                                    <input type="radio" name="rbtIdentificacion" value="1" id="rbtIdentificacion1"
+                                        onclick="javascript:SelectIdentificacion(this.value)">
+                                </div>
+                                <div class="col-xs-11 col-md-11 col-lg-11">
+                                    <label for="rbtIdentificacion1">Automatico</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-1 col-md-1 col-lg-1">
+                                    <input type="radio" name="rbtIdentificacion" value="2" id="rbtIdentificacion2"
+                                        onclick="javascript:SelectIdentificacion(this.value)">
+                                </div>
+                                <div class="col-xs-11 col-md-11 col-lg-11">
+                                    <label for="rbtIdentificacion2">Anónimo</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-1 col-md-1 col-lg-1">
+                                    <input type="radio" name="rbtIdentificacion" id="rbtIdentificacion3" value="3"
+                                        onclick="javascript:SelectIdentificacion(this.value)">
+                                </div>
+                                <div class="col-xs-11 col-md-11 col-lg-11">
+                                    <label for="rbtIdentificacion3">Por formulario</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="btn bg-primary-ft">bg-primary</a>
+                    <a class="btn bg-secondary-ft">bg-secondary</a>
+                    <a class="btn bg-success-ft">bg-success</a>
+                    <a class="btn bg-danger-ft">bg-danger</a>
+                    <a class="btn bg-warning-ft">bg-warning</a>
+                    <a class="btn bg-info-ft">bg-info</a>
+                    <a class="btn bg-light-ft">bg-light</a>
+                    <a class="btn bg-dark-ft">bg-dark</a>
+                    <a class="btn bg-white-ft">bg-white</a>
+                    <a class="btn bg-transparent-ft">bg-transparent</a>
+                    <br> <br>
+
+                    <a class="text-primary-ft">text-primary</a>
+                    <a class="text-secondary-ft">text-secondary</a>
+                    <a class="text-success-ft">text-success</a>
+                    <a class="text-danger-ft">text-danger</a>
+                    <a class="text-warning-ft">text-warning</a>
+                    <a class="text-light-ft">text-light</a>
+                    <a class="text-dark-ft">text-dark</a>
+                    <br> <br>
+                    <a class="btn btn-sm-ft bg-primary-ft">small</a>
+                    <a class="btn bg-primary-ft">Normal</a>
+                    <a class="btn btn-lg-ft bg-primary-ft">Large</a>
+                    <br> <br>
+                    <a class="btn bg-primary-ft sm-round-ft">abc</a>
+                    <a class="btn bg-primary-ft md-round-ft">abc</a>
+                    <a class="btn bg-primary-ft lg-round-ft">abc</a>
+                    <br> <br>
+                    <a class="btn bg-primary-ft sm-square-ft">abc</a>
+                    <a class="btn bg-primary-ft md-square-ft">abc</a>
+                    <a class="btn bg-primary-ft lg-square-ft">abc</a>
+                    <br> <br>
+                    <a class="btn bg-primary-ft sm-square-ft">
+                        <img src="./img/push.png" class="img-sm-ft">
+                    </a>
+                    <a class="btn bg-primary-ft md-round-ft">
+                        <img src="./img/push.png" class="img-md-ft">
+                    </a>
+                    <a class="btn bg-primary-ft btn-sm-ft">
+                        <img src="./img/back.png" class="img-lg-ft">
+                    </a>
+                    <a class="btn bg-primary-ft btn-sm-ft">
+                        <img src="./img/back.png" class="img-logo-ft">
+                        Suscribirse
+                    </a>
+
+                    <div class="row" id="boton-suscripcion">
+                        <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+                            <a class="btn" id="btn-suscripcion-ft">
+                                <img src="" id="img-suscripcion-ft">
+                                <span id="txt-suscripcion-ft">Button</span>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Color de fondo
+                            </div>
+                            <div class="config-options row">
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-primary-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-primary-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-primary-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-secondary-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-secondary-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-secondary-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-success-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-success-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-success-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-danger-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-danger-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-danger-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-warning-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-warning-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-warning-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-info-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-info-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-info-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-light-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-light-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-light-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-dark-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-dark-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-dark-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-white-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-white-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-white-ft">
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn bg-transparent-ft chk-bgcolor text-secondary-ft"
+                                    onclick="javascript:SelectChkBgColor(this.id)" id="div-bg-transparent-ft">
+                                    <input type="radio" name="chk-bgcolor" id="chk-bg-transparent-ft">
+                                    (Transparente)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Color de letra
+                            </div>
+                            <div class="config-options row">
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-primary-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-primary-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-primary-ft">
+                                    Azul
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-secondary-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-secondary-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-secondary-ft">
+                                    Gris
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-success-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-success-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-success-ft">
+                                    Verde
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-danger-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-danger-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-danger-ft">
+                                    Rojo
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-warning-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-warning-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-warning-ft">
+                                    Amarillo
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-light-ft chk-bgcolor bg-secondary-ft"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-light-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-light-ft">
+                                    Blanco
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn text-dark-ft chk-bgcolor"
+                                    onclick="javascript:SelectChkColor(this.id)" id="div-text-dark-ft">
+                                    <input type="radio" name="chk-color" id="chk-text-dark-ft">
+                                    Negro
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Texto:
+                            </div>
+                            <div class="config-options row">
+                                <input type="text" id="txt-texto-boton">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Forma
+                            </div>
+                            <div class="config-options row">
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkForma(this.id)" id="div-rectangulo">
+                                    <input type="radio" name="chk-forma" id="chk-rectangulo">
+                                    Rectangulo
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkForma(this.id)" id="div-circulo">
+                                    <input type="radio" name="chk-forma" id="chk-circulo">
+                                    Circulo
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkForma(this.id)" id="div-cuadrado">
+                                    <input type="radio" name="chk-forma" id="chk-cuadrado">
+                                    Cuadrado
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Tamaño
+                            </div>
+                            <div class="config-options row">
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkTamanio(this.id)" id="div-sm-size-ft">
+                                    <input type="radio" name="chk-tamanio" id="chk-sm-size-ft">
+                                    Pequeño
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkForma(this.id)" id="div-md-size-ft">
+                                    <input type="radio" name="chk-tamanio" id="chk-md-size-ft">
+                                    Mediano
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkForma(this.id)" id="div-lg-size-ft">
+                                    <input type="radio" name="chk-tamanio" id="chk-lg-size-ft">
+                                    Grande
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row" id="form-suscripcion">
+
+                    </div>
+
+                    <div class="row" id="guardar-recurso">
+                        <div class="col-xs-6 col-md-6 col-lg-6 text-center">
+                            <a class="btn btn-success" id="btn-guardar-recurso">Guardar</a>
+                        </div>
+                        <div class="col-xs-6 col-md-6 col-lg-6 text-center">
+                            <a class="btn btn-light" id="btn-ver-codigo">Ver codigo fuente</a>
+                        </div>
+                    </div>
+
+                    <div class="row" id="def" style="display: none;">
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Tipo</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <input type="text">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+
+        //Section: addEventListener
+        document.querySelector('#lstTipoRecurso').addEventListener("change", MostrarDatosDef);
+        document.querySelector('#btn-guardar-recurso').addEventListener("click", GuardarRecurso);
+        document.querySelector('#btn-ver-codigo').addEventListener("click", VerCodigoFuente);
+        document.addEventListener("DOMContentLoaded", init);
+        document.querySelector('#txt-texto-boton').addEventListener('keyup', () => {
+            document.querySelector('#txt-suscripcion-ft').innerHTML = document.querySelector('#txt-texto-boton').value;
+        });
+
+        let forma = "";
+
+        //Section: Init
+        function init() {
+            MostrarDatosDef();
+        }
+
+        //Section: Functions
+        async function GuardarRecurso() {
+            await PostRecurso();
+        }
+
+        function VerCodigoFuente() {
+            console.log('Ver codigo fuente');
+        }
+
+        function MostrarDatosDef() {
+            if (document.querySelector('#lstTipoRecurso').value == '0') {
+                setDisplay('#datos-def', 'flex');
+                GetOrigenesDelDato();
+            }
+            else {
+                setDisplay('#datos-def', 'none');
+            }
+        }
+
+        function SelectIdentificacion(value) {
+            LimpiarIdentificacion();
+            setDisplay('#guardar-recurso', 'flex');
+
+            //TODO: RegistrarAccion
+            switch (parseInt(value)) {
+                case 2:
+                    setDisplay('#boton-suscripcion', 'flex');
+                    break;
+                case 3:
+                    setDisplay('#boton-suscripcion', 'flex');
+                    setDisplay('#form-suscripcion', 'flex');
+                    break;
+            }
+        }
+
+        function LimpiarIdentificacion() {
+            setDisplay('#guardar-recurso', 'none');
+            setDisplay('#boton-suscripcion', 'none');
+            setDisplay('#form-suscripcion', 'none');
+        }
+
+        //Section: Personalize Button
+        let btnSuscripcion = document.querySelector('#btn-suscripcion-ft');
+        let icon = document.querySelector('#img-suscripcion-ft');
+        let span = document.querySelector('#txt-suscripcion-ft');
+
+        //Into-Personalize: Set HTML
+
+        function AddClassToButton(value) { btnSuscripcion.classList.add(value); }
+        function AddClassToImage(value) { image.classList.add(value); }
+
+        //Into-Personalize: Select input
+        function SelectChkBgColor(id) {
+            LimpiarbgColor();
+            let classValue = id.replace('div-', '');
+            document.querySelector(`#chk-${classValue}`).checked = true;
+            AddClassToButton(classValue);
+        }
+
+        function SelectChkColor(id) {
+            LimpiartxtColor();
+            let classValue = id.replace('div-', '');
+            document.querySelector(`#chk-${classValue}`).checked = true;
+            AddClassToButton(classValue);
+        }
+
+        function SelectChkForma(id) {
+            LimpiarForma();
+            let classValue = id.replace('div-', '');
+            if(classValue.trim() === 'circulo'){
+                AddClassToButton('round');
+            }
+            else{
+                btnSuscripcion.classList.remove('round');
+            }
+
+            if(classValue.trim() !== 'rectangulo'){
+                document.getElementById('chk-md-size-ft').click();
+            }
+
+            document.querySelector(`#chk-${classValue}`).checked = true;
+        }
+
+        function SelectChkTamanio(id){
+            LimpiarTamanio();
+            let classValue = id.replace('div-', '');
+
+            if(forma.trim() === 'rectangulo'){
+                switch(classValue){
+                    case 'sm-size-ft':
+                        AddClassToButton('sm-rectangle-ft');
+                        break;
+                    case 'md-size-ft':
+                        AddClassToButton('md-rectangle-ft');
+                        break;
+                    case 'lg-size-ft':
+                        AddClassToButton('lg-rectangle-ft');
+                        break;
+                }
+            }
+            else{
+                AddClassToButton(classValue);
+            }
+
+            document.querySelector(`#chk-${classValue}`).checked = true;
+        }
+
+        //Into-Personalize: Limpiar
+        function LimpiarbgColor() {
+            btnSuscripcion.classList.remove('bg-primary-ft');
+            btnSuscripcion.classList.remove('bg-secondary-ft');
+            btnSuscripcion.classList.remove('bg-success-ft');
+            btnSuscripcion.classList.remove('bg-danger-ft');
+            btnSuscripcion.classList.remove('bg-warning-ft');
+            btnSuscripcion.classList.remove('bg-info-ft');
+            btnSuscripcion.classList.remove('bg-light-ft');
+            btnSuscripcion.classList.remove('bg-dark-ft');
+            btnSuscripcion.classList.remove('bg-white-ft');
+            btnSuscripcion.classList.remove('bg-transparent-ft');
+        }
+        function LimpiartxtColor() {
+            btnSuscripcion.classList.remove('text-primary-ft');
+            btnSuscripcion.classList.remove('text-secondary-ft');
+            btnSuscripcion.classList.remove('text-success-ft');
+            btnSuscripcion.classList.remove('text-danger-ft');
+            btnSuscripcion.classList.remove('text-warning-ft');
+            btnSuscripcion.classList.remove('text-dark-ft');
+            btnSuscripcion.classList.remove('text-light-ft');
+        }
+        function LimpiarForma() {
+
+        }
+        function LimpiarTamanio(){
+            btnSuscripcion.classList.remove('sm-size-ft');
+            btnSuscripcion.classList.remove('md-size-ft');
+            btnSuscripcion.classList.remove('lg-size-ft');
+            btnSuscripcion.classList.remove('lg-rectangle-ft');
+            btnSuscripcion.classList.remove('md-rectangle-ft');
+            btnSuscripcion.classList.remove('sm-rectangle-ft');
+        }
+        function LimpiarImagen() {
+            image.classList.remove('img-sm-ft');
+            image.classList.remove('img-md-ft');
+            image.classList.remove('img-lg-ft');
+            image.classList.remove('img-logo-ft');
+        }
+
+        //Section: Goto API
+
+        async function PostRecurso() {
+            console.log('API: PostRecurso');
+        }
+
+        function GetOrigenesDelDato() {
+            console.log('API: GetOrigenesDelDato');
+            cargarOrigenesDelDato(null);
+        }
+
+        //Section: JS Default
+
+        function setDisplay(selector, display) {
+            document.querySelector(`${selector}`).style.display = display;
+        }
+
+        //Section: inHTML
+
+        function cargarOrigenesDelDato(origenes) {
+            console.log('inHTML: cargarOrigenesDelDato');
+        }
+    </script>
+</body>
+
+</html>
