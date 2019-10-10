@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+
+<body>
+
+    <style>
+        /*** ToPersonalize ***/
+        /* Colors */
+        .bg-primary-ft {
+            background-color: #007bff !important;
+        }
+
+        .bg-secondary-ft {
+            background-color: #6c757d !important;
+        }
+
+        .bg-success-ft {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger-ft {
+            background-color: #dc3545 !important;
+        }
+
+        .bg-warning-ft {
+            background-color: #ffc107 !important;
+        }
+
+        .bg-info-ft {
+            background-color: #17a2b8 !important;
+        }
+
+        .bg-light-ft {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-dark-ft {
+            background-color: #343a40 !important;
+        }
+
+        .bg-white-ft {
+            background-color: #fff !important;
+        }
+
+        .bg-transparent-ft {
+            background-color: transparent !important;
+        }
+
+        /* Text Colors */
+        .text-primary-ft {
+            color: #007bff !important;
+        }
+
+        .text-secondary-ft {
+            color: #6c757d !important;
+        }
+
+        .text-success-ft {
+            color: #28a745 !important;
+        }
+
+        .text-danger-ft {
+            color: #dc3545 !important;
+        }
+
+        .text-warning-ft {
+            color: #ffc107 !important;
+        }
+
+        .text-light-ft {
+            color: #f8f9fa !important;
+        }
+
+        .text-dark-ft {
+            color: #343a40 !important;
+        }
+
+        /*  Rectangular Size */
+        .sm-rectangle-ft {
+            height: 30pt;
+            width: 60pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-rectangle-ft {
+            height: 35pt;
+            width: 100pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-rectangle-ft {
+            height: 40pt;
+            width: 135pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Circular */
+        .round {
+            border-radius: 1500px;
+        }
+
+        /* Size */
+        .sm-size-ft {
+            width: 35pt;
+            height: 35pt;
+
+            font-size: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-size-ft {
+            width: 47pt;
+            height: 47pt;
+
+            font-size: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-size-ft {
+            width: 60pt;
+            height: 60pt;
+
+            font-size: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Image */
+        .img-sm-ft {
+            max-width: 23pt;
+            max-height: 23pt;
+        }
+
+        .img-md-ft {
+            max-width: 30pt;
+            max-height: 30pt;
+        }
+
+        .img-lg-ft {
+            max-width: 40pt;
+            max-height: 40pt;
+        }
+
+        .img-logo-ft {
+            max-width: 13.8pt;
+            max-height: 13.8pt;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        .chk-bgcolor {
+            text-align: left;
+        }
+
+        #btn-suscripcion-ft {
+            overflow: hidden;
+        }
+    </style>
+
+    <div class="" id="div-btn-suscripcion">
+        <a class="btn bg-primary-ft text-light-ft round md-size-ft" id="btn-suscripcion-ft" onclick="Suscribir()">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADLUlEQVRoge2ZTY8UVRSGnytx+FBnUKMxzoyABggLHRUQF8aMJkZN3Pm1If4Agjt/BCv8Cy50MyFuRFcmriBuiAsjhI0GRSXqmEzjTAIjPC76Ejsz3dV1bndVT4xPchd165w+79unq+r2LWgIdV49o3by+FQ92FS9Rsgmlt3Msjo3aX21yZ0YxNKk9dUm/5QGsdJEzbua+NAh2MSHNmXky8Jzk0XdqX6gnsrHBysu9v055lTO2TlZ9Rl1Qb2Uhf6tHsnzc+qSupLHmR4TR3OsOXdh0iZeVlc3fOt/qEcrcp7r061V9aU2tfcKWuhj4g7r6kfqMXVXHs/nufUBOavqU22b2KFeHCBoFC6qO0o0ld613gcOFeZWcQg4UZKYognq3cDPwEMlBWvwGzCXUlqPJJV05DWaMwHwMPBKNKnEyKsFOVFejyaUGDlSkBPlcDShxMjegpzGa5QY2V2QE+X+aELorqVOATeiRQqZity5oh25Nxg/CvdEgv830gL3RYKjRvYE40fhsUhw1Eib2zmhWlEjB4Lxo9CokReD8aPwQiS49nPE7sbaT2E55Uh3FfxLneBIR94q01NMAt6MBA9F3QZcBp4oFFXKD8D+lNKtYYF1O/Ie7ZsA2AccrxM4tCPqLPAtBQu5MbEMPJlS+rUqqLIj6jRwlsmZAHgQ+EytfNIPNKI+DpwDnh6zsBIOA+fUfaEsddHuRttW43d1sa6Jd9WbExZcxU317Y26N13s6lVgNtTC9rmaUprvneh3jYSWzxNik8Z+Rr5oQcionN040e+n9SjwFe2udCNcBhZTStd6Jzd1JC/SngE+BNba0VaLNeA08OxGEzDkyW73gfgO8AZwDHikCYUVXAO+Bj4HllJKnUGB0e2gPXR3zPfS/ds7DzwATAMzefT+r5/h367fBnrf6P6Vj1eADvAn8CNwJY9LKaUrEX3/CcKvFaqwu6zpAHeW3WsppRv53HZgV57fBkynlL4fV+1xG7lO/S2jTkppZly1x/2e/buGYocybiOfBGI/HnPt8aFuV7+psfC7YHdDfOuizg4xcyGvHrY+6pR6Uj2vXs/jvHqiqU78A+gK5qUW41iWAAAAAElFTkSuQmCC"
+                id="img-suscripcion-ft" class="img-md-ft">
+            <span id="txt-suscripcion-ft"></span>
+        </a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+
+    <script type="text/javascript">
+        //Section: Vars
+        const xUrlApi = `http://localhost:53902`;
+        // const xUrlApi = `https://rest.fidelitytools.net`;
+        const xUrlSW = '../firebase-messaging-sw.js';
+        var messaging;
+
+        //Section: GotoAPI
+        async function GetPushConfig() {
+            let response = await useFetch(`${xUrlApi}/api/Fidelitytools/ConfiguracionServerPush/Obtener`, 'GET', undefined, undefined);
+
+            if (response.status === 200) {
+                return response.content;
+            }
+
+            return null;
+        }
+        async function PostSuscripcion(body) {
+            let response = useFetch(`${xUrlApi}/api/Fidelitytools/Suscripcion`, 'POST', undefined, body);
+
+            if (response.status === 201) {
+                document.querySelector('#btn-suscripcion-ft').style.display = 'none';
+            }
+        }
+
+        //Section: ServiceWorker
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register(`${xUrlSW}`)
+                .then((registration) => {
+                    console.log('Service Worker registration completed with scope: ',
+                        registration.scope)
+                }, (err) => {
+                    console.log('Service Worker registration failed', err)
+                })
+        })
+
+        //Section Set Firebase 
+        GetPushConfig().then(config => {
+            if (config) {
+                firebase.initializeApp(config);
+                messaging = firebase.messaging();
+                messaging.usePublicVapidKey(config.parKey);
+            }
+        });
+
+        //Section: Firebase Functions
+        function Suscribir() {
+            messaging.requestPermission()
+                .then(() => {
+                    return messaging.getToken();
+                })
+                .then(token => {
+                    console.log(token);
+                    document.querySelector('#btn-suscripcion-ft').style.display = 'none';
+                    //TODO: Guardar token en Fidelitytools
+                })
+                .catch(err => {
+                    console.log('Ocurrio un error', err);
+                });
+        }
+
+        //Section: JS Default
+        async function useFetch(url, method, headers, body) {
+            var response = {};
+
+            try {
+                await fetch(url,
+                    {
+                        method,
+                        headers,
+                        body
+                    })
+                    .then(async res => {
+                        response.status = res.status;
+
+                        await res.text().then(content => {
+                            response.content = JSON.parse(content);
+                        });
+                    });
+
+                return response;
+            }
+            catch (ex) { console.log(ex); }
+        }
+    </script>
+</body>
+
+</html>

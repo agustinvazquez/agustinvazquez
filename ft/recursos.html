@@ -31,11 +31,15 @@
             display: none;
         }
 
-        /*
+
         #boton-suscripcion {
             display: none;
         }
-*/
+
+        #automatico {
+            display: none;
+        }
+
         /*** ToPersonalize ***/
         /* Colors */
         .bg-primary-ft {
@@ -108,7 +112,7 @@
         }
 
         /*  Rectangular Size */
-        .sm-rectangle-ft{
+        .sm-rectangle-ft {
             height: 30pt;
             width: 60pt;
 
@@ -117,7 +121,7 @@
             justify-content: center;
         }
 
-        .md-rectangle-ft{
+        .md-rectangle-ft {
             height: 35pt;
             width: 100pt;
 
@@ -126,7 +130,7 @@
             justify-content: center;
         }
 
-        .lg-rectangle-ft{
+        .lg-rectangle-ft {
             height: 40pt;
             width: 135pt;
 
@@ -136,7 +140,7 @@
         }
 
         /* Circular */
-        .round{
+        .round {
             border-radius: 1500px;
         }
 
@@ -166,7 +170,7 @@
         .lg-size-ft {
             width: 60pt;
             height: 60pt;
-            
+
             font-size: 18px;
 
             display: flex;
@@ -217,7 +221,7 @@
                         </div>
                         <div class="col-xs-8 col-md-8 col-lg-8">
                             <select id="lstTipoRecurso">
-                                <option value="0">Medio de suscripcion</option>
+                                <option value="MedioSuscripcion">Medio de suscripcion</option>
                                 <option value="1">Opcion</option>
                                 <option value="2">Galeria de imagenes</option>
                                 <option value="3">Plantilla de texto</option>
@@ -227,20 +231,29 @@
 
                     <div class="row" id="datos-def">
                         <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Segmento:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <select id="lstSegmentos">
+                            </select>
+                        </div>
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Habilitado:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <input type="checkbox" id="chkRecursoHabilitado">
+                        </div>
+
+                        <div class="col-xs-3 col-md-3 col-lg-3">
                             <label>Origen del dato:</label>
                         </div>
                         <div class="col-xs-8 col-md-8 col-lg-8">
                             <select id="lstOrigenes">
-                                <option value="0">Seleccione...</option>
-                                <!-- Opciones de la api -->
-                                <option value="1">Origen 1</option>
-                                <option value="2">Origen 2</option>
-                                <option value="3">Origen 3</option>
                             </select>
                         </div>
 
                         <div class="col-xs-3 col-md-3 col-lg-3">
-                            <label>Nombre interno:</label>
+                            <label>Nombre:</label>
                         </div>
                         <div class="col-xs-8 col-md-8 col-lg-8">
                             <input type="text" id="txtNombreInterno">
@@ -252,85 +265,49 @@
                         <div class="col-xs-8 col-md-8 col-lg-8">
                             <div class="row">
                                 <div class="col-xs-1 col-md-1 col-lg-1">
-                                    <input type="radio" name="rbtIdentificacion" value="1" id="rbtIdentificacion1"
+                                    <input type="radio" name="rbtIdentificacion" value="1" id="rbtIdentificacionAutomatica"
                                         onclick="javascript:SelectIdentificacion(this.value)">
                                 </div>
                                 <div class="col-xs-11 col-md-11 col-lg-11">
-                                    <label for="rbtIdentificacion1">Automatico</label>
+                                    <label for="rbtIdentificacionAutomatica">Automatico</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-1 col-md-1 col-lg-1">
-                                    <input type="radio" name="rbtIdentificacion" value="2" id="rbtIdentificacion2"
+                                    <input type="radio" name="rbtIdentificacion" value="2" id="rbtIdentificacionAnonimo"
                                         onclick="javascript:SelectIdentificacion(this.value)">
                                 </div>
                                 <div class="col-xs-11 col-md-11 col-lg-11">
-                                    <label for="rbtIdentificacion2">Anónimo</label>
+                                    <label for="rbtIdentificacionAnonimo">Anónimo</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-1 col-md-1 col-lg-1">
-                                    <input type="radio" name="rbtIdentificacion" id="rbtIdentificacion3" value="3"
+                                    <input type="radio" name="rbtIdentificacion" id="rbtIdentificacionFormulario" value="3"
                                         onclick="javascript:SelectIdentificacion(this.value)">
                                 </div>
                                 <div class="col-xs-11 col-md-11 col-lg-11">
-                                    <label for="rbtIdentificacion3">Por formulario</label>
+                                    <label for="rbtIdentificacionFormulario">Por formulario</label>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <a class="btn bg-primary-ft">bg-primary</a>
-                    <a class="btn bg-secondary-ft">bg-secondary</a>
-                    <a class="btn bg-success-ft">bg-success</a>
-                    <a class="btn bg-danger-ft">bg-danger</a>
-                    <a class="btn bg-warning-ft">bg-warning</a>
-                    <a class="btn bg-info-ft">bg-info</a>
-                    <a class="btn bg-light-ft">bg-light</a>
-                    <a class="btn bg-dark-ft">bg-dark</a>
-                    <a class="btn bg-white-ft">bg-white</a>
-                    <a class="btn bg-transparent-ft">bg-transparent</a>
-                    <br> <br>
-
-                    <a class="text-primary-ft">text-primary</a>
-                    <a class="text-secondary-ft">text-secondary</a>
-                    <a class="text-success-ft">text-success</a>
-                    <a class="text-danger-ft">text-danger</a>
-                    <a class="text-warning-ft">text-warning</a>
-                    <a class="text-light-ft">text-light</a>
-                    <a class="text-dark-ft">text-dark</a>
-                    <br> <br>
-                    <a class="btn btn-sm-ft bg-primary-ft">small</a>
-                    <a class="btn bg-primary-ft">Normal</a>
-                    <a class="btn btn-lg-ft bg-primary-ft">Large</a>
-                    <br> <br>
-                    <a class="btn bg-primary-ft sm-round-ft">abc</a>
-                    <a class="btn bg-primary-ft md-round-ft">abc</a>
-                    <a class="btn bg-primary-ft lg-round-ft">abc</a>
-                    <br> <br>
-                    <a class="btn bg-primary-ft sm-square-ft">abc</a>
-                    <a class="btn bg-primary-ft md-square-ft">abc</a>
-                    <a class="btn bg-primary-ft lg-square-ft">abc</a>
-                    <br> <br>
-                    <a class="btn bg-primary-ft sm-square-ft">
-                        <img src="./img/push.png" class="img-sm-ft">
-                    </a>
-                    <a class="btn bg-primary-ft md-round-ft">
-                        <img src="./img/push.png" class="img-md-ft">
-                    </a>
-                    <a class="btn bg-primary-ft btn-sm-ft">
-                        <img src="./img/back.png" class="img-lg-ft">
-                    </a>
-                    <a class="btn bg-primary-ft btn-sm-ft">
-                        <img src="./img/back.png" class="img-logo-ft">
-                        Suscribirse
-                    </a>
+                    <div class="row" id="automatico">
+                        <div class="col-xs-3 col-md-3 col-lg-3">
+                            <label>Tiempo de aparicion:</label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 col-lg-8">
+                            <input type="number" id="txtTiempoAparicion" value='0' min="0"> <span
+                                class="text-secondary-ft">segundos</span>
+                        </div>
+                    </div>
 
                     <div class="row" id="boton-suscripcion">
-                        <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+                        <div class="col-xs-12 col-md-12 col-lg-12 text-center" id="div-btn-suscripcion">
                             <a class="btn" id="btn-suscripcion-ft">
                                 <img src="" id="img-suscripcion-ft">
-                                <span id="txt-suscripcion-ft">Button</span>
+                                <span id="txt-suscripcion-ft"></span>
                             </a>
                         </div>
 
@@ -469,13 +446,41 @@
                                     Pequeño
                                 </div>
                                 <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
-                                    onclick="javascript:SelectChkForma(this.id)" id="div-md-size-ft">
+                                    onclick="javascript:SelectChkTamanio(this.id)" id="div-md-size-ft">
                                     <input type="radio" name="chk-tamanio" id="chk-md-size-ft">
                                     Mediano
                                 </div>
                                 <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
-                                    onclick="javascript:SelectChkForma(this.id)" id="div-lg-size-ft">
+                                    onclick="javascript:SelectChkTamanio(this.id)" id="div-lg-size-ft">
                                     <input type="radio" name="chk-tamanio" id="chk-lg-size-ft">
+                                    Grande
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 config-button">
+                            <div class="config-title">
+                                Imagen <input type="checkbox" id="chkImagenBoton">
+                            </div>
+                            <div class="config-options row">
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkImgTamanio(this.id)" id="div-img-logo-ft">
+                                    <input type="radio" name="chk-img-tamanio" id="chk-img-logo-ft">
+                                    Pequeñita
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkImgTamanio(this.id)" id="div-img-sm-ft">
+                                    <input type="radio" name="chk-img-tamanio" id="chk-img-sm-ft">
+                                    Pequeña
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkImgTamanio(this.id)" id="div-img-md-ft">
+                                    <input type="radio" name="chk-img-tamanio" id="chk-img-md-ft">
+                                    Mediana
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 btn chk-bgcolor"
+                                    onclick="javascript:SelectChkImgTamanio(this.id)" id="div-img-lg-ft">
+                                    <input type="radio" name="chk-img-tamanio" id="chk-img-lg-ft">
                                     Grande
                                 </div>
                             </div>
@@ -496,16 +501,6 @@
                             <a class="btn btn-light" id="btn-ver-codigo">Ver codigo fuente</a>
                         </div>
                     </div>
-
-                    <div class="row" id="def" style="display: none;">
-                        <div class="col-xs-3 col-md-3 col-lg-3">
-                            <label>Tipo</label>
-                        </div>
-                        <div class="col-xs-8 col-md-8 col-lg-8">
-                            <input type="text">
-                        </div>
-                    </div>
-
                 </form>
             </div>
 
@@ -523,54 +518,136 @@
         document.querySelector('#txt-texto-boton').addEventListener('keyup', () => {
             document.querySelector('#txt-suscripcion-ft').innerHTML = document.querySelector('#txt-texto-boton').value;
         });
+        document.querySelector('#chkImagenBoton').addEventListener('change', SetImg);
 
+        //Section: DefVars
         let forma = "";
+        const b64ImgCampana = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADLUlEQVRoge2ZTY8UVRSGnytx+FBnUKMxzoyABggLHRUQF8aMJkZN3Pm1If4Agjt/BCv8Cy50MyFuRFcmriBuiAsjhI0GRSXqmEzjTAIjPC76Ejsz3dV1bndVT4xPchd165w+79unq+r2LWgIdV49o3by+FQ92FS9Rsgmlt3Msjo3aX21yZ0YxNKk9dUm/5QGsdJEzbua+NAh2MSHNmXky8Jzk0XdqX6gnsrHBysu9v055lTO2TlZ9Rl1Qb2Uhf6tHsnzc+qSupLHmR4TR3OsOXdh0iZeVlc3fOt/qEcrcp7r061V9aU2tfcKWuhj4g7r6kfqMXVXHs/nufUBOavqU22b2KFeHCBoFC6qO0o0ld613gcOFeZWcQg4UZKYognq3cDPwEMlBWvwGzCXUlqPJJV05DWaMwHwMPBKNKnEyKsFOVFejyaUGDlSkBPlcDShxMjegpzGa5QY2V2QE+X+aELorqVOATeiRQqZity5oh25Nxg/CvdEgv830gL3RYKjRvYE40fhsUhw1Eib2zmhWlEjB4Lxo9CokReD8aPwQiS49nPE7sbaT2E55Uh3FfxLneBIR94q01NMAt6MBA9F3QZcBp4oFFXKD8D+lNKtYYF1O/Ie7ZsA2AccrxM4tCPqLPAtBQu5MbEMPJlS+rUqqLIj6jRwlsmZAHgQ+EytfNIPNKI+DpwDnh6zsBIOA+fUfaEsddHuRttW43d1sa6Jd9WbExZcxU317Y26N13s6lVgNtTC9rmaUprvneh3jYSWzxNik8Z+Rr5oQcionN040e+n9SjwFe2udCNcBhZTStd6Jzd1JC/SngE+BNba0VaLNeA08OxGEzDkyW73gfgO8AZwDHikCYUVXAO+Bj4HllJKnUGB0e2gPXR3zPfS/ds7DzwATAMzefT+r5/h367fBnrf6P6Vj1eADvAn8CNwJY9LKaUrEX3/CcKvFaqwu6zpAHeW3WsppRv53HZgV57fBkynlL4fV+1xG7lO/S2jTkppZly1x/2e/buGYocybiOfBGI/HnPt8aFuV7+psfC7YHdDfOuizg4xcyGvHrY+6pR6Uj2vXs/jvHqiqU78A+gK5qUW41iWAAAAAElFTkSuQmCC";
+        const xIdSitio = getUrlParameterByName("idSitio");
+        const xUrlApi = `http://localhost:53902`;
+        // const xUrlApi = `https://rest.fidelitytools.net`;
 
         //Section: Init
         function init() {
             MostrarDatosDef();
+            SetDefBoton();
         }
 
         //Section: Functions
         async function GuardarRecurso() {
-            await PostRecurso();
-        }
+            if (ValidarRecurso()) {
+                await PostRecurso();
+            }
 
+        }
         function VerCodigoFuente() {
             console.log('Ver codigo fuente');
         }
-
         function MostrarDatosDef() {
-            if (document.querySelector('#lstTipoRecurso').value == '0') {
+            if (document.querySelector('#lstTipoRecurso').value.trim() == 'MedioSuscripcion') {
                 setDisplay('#datos-def', 'flex');
                 GetOrigenesDelDato();
+                GetSegmentos();
             }
             else {
                 setDisplay('#datos-def', 'none');
             }
         }
-
+        function SetDefBoton() {
+            document.getElementById('chk-bg-primary-ft').click();
+            document.getElementById('chk-text-light-ft').click();
+            document.getElementById('chk-circulo').click();
+            document.getElementById('chk-md-size-ft').click();
+            document.getElementById('chkImagenBoton').checked = true;
+            SetImg();
+            document.getElementById('chk-img-md-ft').click();
+        }
         function SelectIdentificacion(value) {
             LimpiarIdentificacion();
             setDisplay('#guardar-recurso', 'flex');
 
             //TODO: RegistrarAccion
             switch (parseInt(value)) {
-                case 2:
+                case 1: {
+                    setDisplay('#automatico', 'flex');
+                    break;
+                }
+                case 2: {
                     setDisplay('#boton-suscripcion', 'flex');
                     break;
-                case 3:
-                    setDisplay('#boton-suscripcion', 'flex');
-                    setDisplay('#form-suscripcion', 'flex');
+                }
+                case 3: {
+                    //setDisplay('#boton-suscripcion', 'flex');
+                    //setDisplay('#form-suscripcion', 'flex');
+                    setDisplay('#guardar-recurso', 'none');
                     break;
+                }
+
             }
         }
-
         function LimpiarIdentificacion() {
             setDisplay('#guardar-recurso', 'none');
             setDisplay('#boton-suscripcion', 'none');
             setDisplay('#form-suscripcion', 'none');
+            setDisplay('#automatico', 'none');
         }
+        function ValidarRecurso() {
+            try {
+                if (document.querySelector('#lstTipoRecurso').value.trim() === 'MedioSuscripcion') {
+
+                    let Recurso = {};
+                    Recurso = {
+                        origen: {
+                            idOrigen : 0
+                        },
+                        formulario: {
+                            segmento: {
+                                idSegmento: 0
+                            }
+                        }
+                    };
+
+                    Recurso.formulario.segmento.idSegmento = document.querySelector('#lstSegmentos').value;
+                    if (!Recurso.formulario.segmento.idSegmento || parseInt(Recurso.formulario.segmento.idSegmento) < 1) {
+                        return false;
+                    }
+
+                    Recurso.origen.idOrigen = document.querySelector('#lstOrigenes').value;
+                    if (!Recurso.origen.idOrigen || parseInt(Recurso.origen.idOrigen) < 1) {
+                        return false;
+                    }
+
+                    Recurso.nombre = document.querySelector('#txtNombreInterno').value;
+                    if (!Recurso.nombre || Recurso.nombre.trim() === '') {
+                        return false;
+                    }
+
+                    Recurso.habilitado = document.querySelector('#chkRecursoHabilitado').checked;
+
+                    if(document.querySelector('#rbtIdentificacionAutomatica').checked){
+                        let txtTiempoAparicion = document.querySelector('#txtTiempoAparicion').value;
+                        if(!txtTiempoAparicion || parseInt(txtTiempoAparicion) < 1){
+                            return false;
+                        }
+
+                        //TODO: Make script
+                    }
+                    if(document.querySelector('#rbtIdentificacionAnonimo').checked){
+                        let input = document.querySelector('#div-btn-suscripcion').innerHTML;
+                        console.log(input);
+                        
+                    }
+                    if(document.querySelector('#rbtIdentificacionFormulario').checked){
+                        //TODO: Formularios
+                    }
+                }
+            }
+            catch (e) { console.log(e); }
+
+
+            return false;
+        }
+
 
         //Section: Personalize Button
         let btnSuscripcion = document.querySelector('#btn-suscripcion-ft');
@@ -580,7 +657,7 @@
         //Into-Personalize: Set HTML
 
         function AddClassToButton(value) { btnSuscripcion.classList.add(value); }
-        function AddClassToImage(value) { image.classList.add(value); }
+        function AddClassToImage(value) { icon.classList.add(value); }
 
         //Into-Personalize: Select input
         function SelectChkBgColor(id) {
@@ -589,37 +666,32 @@
             document.querySelector(`#chk-${classValue}`).checked = true;
             AddClassToButton(classValue);
         }
-
         function SelectChkColor(id) {
             LimpiartxtColor();
             let classValue = id.replace('div-', '');
             document.querySelector(`#chk-${classValue}`).checked = true;
             AddClassToButton(classValue);
         }
-
         function SelectChkForma(id) {
-            LimpiarForma();
             let classValue = id.replace('div-', '');
-            if(classValue.trim() === 'circulo'){
+            forma = classValue;
+            if (classValue.trim() === 'circulo') {
                 AddClassToButton('round');
             }
-            else{
+            else {
                 btnSuscripcion.classList.remove('round');
             }
 
-            if(classValue.trim() !== 'rectangulo'){
-                document.getElementById('chk-md-size-ft').click();
-            }
+            document.getElementById('chk-md-size-ft').click();
 
             document.querySelector(`#chk-${classValue}`).checked = true;
         }
-
-        function SelectChkTamanio(id){
+        function SelectChkTamanio(id) {
             LimpiarTamanio();
             let classValue = id.replace('div-', '');
 
-            if(forma.trim() === 'rectangulo'){
-                switch(classValue){
+            if (forma.trim() === 'rectangulo') {
+                switch (classValue) {
                     case 'sm-size-ft':
                         AddClassToButton('sm-rectangle-ft');
                         break;
@@ -631,10 +703,23 @@
                         break;
                 }
             }
-            else{
+            else {
                 AddClassToButton(classValue);
             }
 
+            document.querySelector(`#chk-${classValue}`).checked = true;
+        }
+        function SetImg() {
+            if (document.querySelector('#chkImagenBoton').checked) {
+                icon.src = b64ImgCampana;
+            }
+            else { icon.src = ""; }
+        }
+        function SelectChkImgTamanio(id) {
+            LimpiarImagen();
+            let classValue = id.replace('div-', '');
+
+            AddClassToImage(classValue);
             document.querySelector(`#chk-${classValue}`).checked = true;
         }
 
@@ -660,10 +745,7 @@
             btnSuscripcion.classList.remove('text-dark-ft');
             btnSuscripcion.classList.remove('text-light-ft');
         }
-        function LimpiarForma() {
-
-        }
-        function LimpiarTamanio(){
+        function LimpiarTamanio() {
             btnSuscripcion.classList.remove('sm-size-ft');
             btnSuscripcion.classList.remove('md-size-ft');
             btnSuscripcion.classList.remove('lg-size-ft');
@@ -672,33 +754,91 @@
             btnSuscripcion.classList.remove('sm-rectangle-ft');
         }
         function LimpiarImagen() {
-            image.classList.remove('img-sm-ft');
-            image.classList.remove('img-md-ft');
-            image.classList.remove('img-lg-ft');
-            image.classList.remove('img-logo-ft');
+            icon.classList.remove('img-sm-ft');
+            icon.classList.remove('img-md-ft');
+            icon.classList.remove('img-lg-ft');
+            icon.classList.remove('img-logo-ft');
         }
 
         //Section: Goto API
-
         async function PostRecurso() {
             console.log('API: PostRecurso');
         }
-
         function GetOrigenesDelDato() {
-            console.log('API: GetOrigenesDelDato');
-            cargarOrigenesDelDato(null);
+            useFetch(`${xUrlApi}/api/Fidelitytools/Origen/Obtener/${xIdSitio}`, 'GET', undefined, undefined)
+                .then(response => {
+                    if (response.status === 200) {
+                        cargarOrigenesDelDato(response.content);
+                    }
+                });
+        }
+        function GetSegmentos() {
+            useFetch(`${xUrlApi}/Fidelitytools/Segmentacion/Segmento/ObtenerSegmentosPorSitio/${xIdSitio}`)
+                .then(response => {
+                    if (response.status === 200) {
+                        cargarSegmentos(response.content);
+                    }
+                });
         }
 
         //Section: JS Default
-
         function setDisplay(selector, display) {
             document.querySelector(`${selector}`).style.display = display;
         }
+        function getUrlParameterByName(name) {
+            let url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        async function useFetch(url, method, headers, body) {
+            var response = {};
+
+            try {
+                await fetch(url,
+                    {
+                        method,
+                        headers,
+                        body
+                    })
+                    .then(async res => {
+                        response.status = res.status;
+
+                        await res.text().then(content => {
+                            response.content = JSON.parse(content);
+                        });
+                    });
+
+                return response;
+            }
+            catch (ex) { console.log(ex); }
+        }
 
         //Section: inHTML
-
         function cargarOrigenesDelDato(origenes) {
-            console.log('inHTML: cargarOrigenesDelDato');
+            let options = `<option value="0">Seleccione...</option>`;
+
+            origenes.forEach(origen => {
+                if (origen.habilitado) {
+                    options += `<option value="${origen.idOrigen}">${origen.nombre}</option>`
+                }
+            });
+
+            document.querySelector('#lstOrigenes').innerHTML = options;
+        }
+        function cargarSegmentos(segmentos) {
+            let options = `<option value="0">Seleccione...</option>`;
+
+            segmentos.forEach(segmento => {
+                if (segmento.habilitado) {
+                    options += `<option value="${segmento.idSegmento}">${segmento.nombre}</option>`
+                }
+            });
+
+            document.querySelector('#lstSegmentos').innerHTML = options;
         }
     </script>
 </body>
