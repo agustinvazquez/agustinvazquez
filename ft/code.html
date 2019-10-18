@@ -5,281 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
+
+    <link rel="stylesheet" href="http://localserver3:8093/public/styles/ft-push-button-styles.css">
 </head>
 
 <body>
 
-    <style>
-        /*** ToPersonalize ***/
-        /* Colors */
-        .bg-primary-ft {
-            background-color: #007bff !important;
-        }
-
-        .bg-secondary-ft {
-            background-color: #6c757d !important;
-        }
-
-        .bg-success-ft {
-            background-color: #28a745 !important;
-        }
-
-        .bg-danger-ft {
-            background-color: #dc3545 !important;
-        }
-
-        .bg-warning-ft {
-            background-color: #ffc107 !important;
-        }
-
-        .bg-info-ft {
-            background-color: #17a2b8 !important;
-        }
-
-        .bg-light-ft {
-            background-color: #f8f9fa !important;
-        }
-
-        .bg-dark-ft {
-            background-color: #343a40 !important;
-        }
-
-        .bg-white-ft {
-            background-color: #fff !important;
-        }
-
-        .bg-transparent-ft {
-            background-color: transparent !important;
-        }
-
-        /* Text Colors */
-        .text-primary-ft {
-            color: #007bff !important;
-        }
-
-        .text-secondary-ft {
-            color: #6c757d !important;
-        }
-
-        .text-success-ft {
-            color: #28a745 !important;
-        }
-
-        .text-danger-ft {
-            color: #dc3545 !important;
-        }
-
-        .text-warning-ft {
-            color: #ffc107 !important;
-        }
-
-        .text-light-ft {
-            color: #f8f9fa !important;
-        }
-
-        .text-dark-ft {
-            color: #343a40 !important;
-        }
-
-        /*  Rectangular Size */
-        .sm-rectangle-ft {
-            height: 30pt;
-            width: 60pt;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .md-rectangle-ft {
-            height: 35pt;
-            width: 100pt;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lg-rectangle-ft {
-            height: 40pt;
-            width: 135pt;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Circular */
-        .round {
-            border-radius: 1500px;
-        }
-
-        /* Size */
-        .sm-size-ft {
-            width: 35pt;
-            height: 35pt;
-
-            font-size: 12px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .md-size-ft {
-            width: 47pt;
-            height: 47pt;
-
-            font-size: 15px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lg-size-ft {
-            width: 60pt;
-            height: 60pt;
-
-            font-size: 18px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Image */
-        .img-sm-ft {
-            max-width: 23pt;
-            max-height: 23pt;
-        }
-
-        .img-md-ft {
-            max-width: 30pt;
-            max-height: 30pt;
-        }
-
-        .img-lg-ft {
-            max-width: 40pt;
-            max-height: 40pt;
-        }
-
-        .img-logo-ft {
-            max-width: 13.8pt;
-            max-height: 13.8pt;
-        }
-
-        .btn {
-            cursor: pointer;
-        }
-
-        .chk-bgcolor {
-            text-align: left;
-        }
-
-        #btn-suscripcion-ft {
-            overflow: hidden;
-        }
-    </style>
-
     <div class="" id="div-btn-suscripcion">
-        <a class="btn bg-primary-ft text-light-ft round md-size-ft" id="btn-suscripcion-ft" onclick="Suscribir()">
+
+        <!-- <a style="display:none;" id="btn-suscripcion-ft"></a> -->
+
+        <!-- <a class="btn bg-primary-ft text-light-ft round md-size-ft" id="btn-suscripcion-ft" onclick="Suscribir(0)">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADLUlEQVRoge2ZTY8UVRSGnytx+FBnUKMxzoyABggLHRUQF8aMJkZN3Pm1If4Agjt/BCv8Cy50MyFuRFcmriBuiAsjhI0GRSXqmEzjTAIjPC76Ejsz3dV1bndVT4xPchd165w+79unq+r2LWgIdV49o3by+FQ92FS9Rsgmlt3Msjo3aX21yZ0YxNKk9dUm/5QGsdJEzbua+NAh2MSHNmXky8Jzk0XdqX6gnsrHBysu9v055lTO2TlZ9Rl1Qb2Uhf6tHsnzc+qSupLHmR4TR3OsOXdh0iZeVlc3fOt/qEcrcp7r061V9aU2tfcKWuhj4g7r6kfqMXVXHs/nufUBOavqU22b2KFeHCBoFC6qO0o0ld613gcOFeZWcQg4UZKYognq3cDPwEMlBWvwGzCXUlqPJJV05DWaMwHwMPBKNKnEyKsFOVFejyaUGDlSkBPlcDShxMjegpzGa5QY2V2QE+X+aELorqVOATeiRQqZity5oh25Nxg/CvdEgv830gL3RYKjRvYE40fhsUhw1Eib2zmhWlEjB4Lxo9CokReD8aPwQiS49nPE7sbaT2E55Uh3FfxLneBIR94q01NMAt6MBA9F3QZcBp4oFFXKD8D+lNKtYYF1O/Ie7ZsA2AccrxM4tCPqLPAtBQu5MbEMPJlS+rUqqLIj6jRwlsmZAHgQ+EytfNIPNKI+DpwDnh6zsBIOA+fUfaEsddHuRttW43d1sa6Jd9WbExZcxU317Y26N13s6lVgNtTC9rmaUprvneh3jYSWzxNik8Z+Rr5oQcionN040e+n9SjwFe2udCNcBhZTStd6Jzd1JC/SngE+BNba0VaLNeA08OxGEzDkyW73gfgO8AZwDHikCYUVXAO+Bj4HllJKnUGB0e2gPXR3zPfS/ds7DzwATAMzefT+r5/h367fBnrf6P6Vj1eADvAn8CNwJY9LKaUrEX3/CcKvFaqwu6zpAHeW3WsppRv53HZgV57fBkynlL4fV+1xG7lO/S2jTkppZly1x/2e/buGYocybiOfBGI/HnPt8aFuV7+psfC7YHdDfOuizg4xcyGvHrY+6pR6Uj2vXs/jvHqiqU78A+gK5qUW41iWAAAAAElFTkSuQmCC"
                 id="img-suscripcion-ft" class="img-md-ft">
             <span id="txt-suscripcion-ft"></span>
         </a>
+
+        <img class="img-lg-ft" id="img-success" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAErklEQVRoge2ZTUgcZxjH/8/MrAeJtFhXsn600hLd3VgLXbUUUtCQi8XFrGZNW1vooaQVDfReClsovZe6NubQk4eoUVd2TSmE4LEYhRYbbYT0kFiVbpQGF0V3Z54eojHdeXdnZmf0Ev+3fd6P+f3nfXbeL+BEJ3qxRU50Eh4NyztKppklrVViCmiAlwAPAacAgIEUmFaJ+L5GPC+p8p3AQsNsJBLR7D7bloGOWEe1pkl9DHwM4kqLzVdAPKyqcvTnromVQhkKMtA2GnYrrvS3DHwKoKjQh+9rD8Q/kax9HQ/GH1ttbNlAMNbxETP9AKDUalsDbTBT/3Tn5A0rjUwbCAxdcXncyUEQf2adzbyYaWg96b46//n1tJn6pgwE48Fizsg3AbTZojOvW6So4Xgwvm1UUTKqEBi64jpmeAB4nzPyVHg0bPj/MjTgcScHcbzwB7qwU7T3vVGlvCnUPhHqAfGwc0wFiPiDxMWpkZzFuQpCE6FX0sR/Aig7EjDz2iRFrcv1ic2ZQhni73CM8GUlxbmKSrWM/E2uQuEItI13VsmS9gD2JylTqj1diu7mevz6YAW37/0lqrJHinomHow/zC4QjoBC3I9jhlckCefOvIoLZ18XVStiVeoVFegMRCIRiYl7nAYVyedx43Lzm1CkQ4x336iGW5ROmvRJeDQsZ4d1BuYafn8HQJWzqHrVni5FV5MPsnSYxarGuHl3EcktwfxFXLnjSgeywzoDLGmtDrPq5K8o0735A/iltWTOdsR0PjumM0Ca1OgUqEj+ijJ0NZ4Vvvl88ADAgPEIAKi1TZlDduABgIjrsmN6A8Qes0B5vt06+TxuW/AAwICOTTQCp8x01uKtQW9rE3wet2Fdf0UZLjX5bcHvqyQ7YLiYE6nFW4MWbw1kiXCpyZ/XhN20MZLIQCpfA3dJMd6rfe3Z73wmjgB+KzugN8C0lq+H5NY2RmYXkNEODxRkidDd7Ed9VflRwoMAHZtoBJaNOlpe38To7B//M0FE6Ar4UF9VfmRpw0z3s2OiiWzOTGfL65sYv7sEVeNnMSJC6G2fEH587p7tnBex6QxIqnzHbIdLa0lhOone/OKq5RMTnURsOgOBhYZZAI/MdipKpwM5+bUB8DCw0DCfHdSt7mZmZrj2w7pygM6Z7XkjtYP1J1vwVbgh0dO37zA8AAxe7712OzsonAdUVY4C2LPS+/MjcQTwu1AyUVFBzj1xe6zjRzB9YfVJ/oqnu1Ancv45DSRCsauigpwzcXqv6CsAlikWVx87Db9BippzT5zTwC/dY5vMJHR9nGKm3nyHvnnXQtOdkzeYach5LJMijk53To7lq2K4mCvOKH0AYo5BmRQRT6deevKlUT1DA2PdYyopag+AW46QmVMCstY90zqTMapoajkdD8a31/4pvwjia/bZDEQcTb38b8jMyTRQwAVHe6zjMpgG4PypXZKZ+oxyPluWNzSJi1MjLiYvA4MAdq22F2gXwEA67fJahQdsXvK1x9srocr9YOoBUG2x+SMAw1Ay0UQw8XehDI5cs0YiEWnurd8aiek8AwEirmOgEof76xSYVgAss6TN7V+zzjtxzXqiE73o+g+dpfqwtFDpgQAAAABJRU5ErkJggg=="> -->
+
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
 
-    <script type="text/javascript">
-        //Section: Vars
-        const xUrlApi = `http://localhost:53902`;
-        // const xUrlApi = `https://rest.fidelitytools.net`;
-        const xUrlSW = '../firebase-messaging-sw.js';
-        var messaging;
+    <script src="http://localserver3:8093/public/scripts/ft-suscribir-push.js"></script>
 
-        //Section: GotoAPI
-        async function GetPushConfig() {
-            let response = await useFetch(`${xUrlApi}/api/Fidelitytools/ConfiguracionServerPush/Obtener`, 'GET', undefined, undefined);
+    <!-- With Sec -->
+    <!-- <a style='display:none;' id='btn-suscripcion-ft'></a>  <script>suscribirAutomaticamente = true; segundos = 4; setPersona({ persona : { sitio: { idSitio: 266 }, segmento: { idSegmento: 5388 }}, origen: { idOrigen: 1 }, token: '' });  setPersona({ persona : { sitio: { idSitio: 266 }, segmento: { idSegmento: 5388 }}, origen: { idOrigen: 1 }, token: '' }); </script> -->
+    
+    <!-- 0 Sec -->
+    <!-- <a style='display:none;' id='btn-suscripcion-ft'></a>  <script>suscribirAutomaticamente = true;  setPersona({ persona : { sitio: { idSitio: 266 }, segmento: { idSegmento: 5388 }}, origen: { idOrigen: 1 }, token: '' });  setPersona({ persona : { sitio: { idSitio: 266 }, segmento: { idSegmento: 5388 }}, origen: { idOrigen: 1 }, token: '' }); </script> -->
 
-            if (response.status === 200) {
-                return response.content;
-            }
+    <!-- Button -->
+    <a class="btn-ft bg-primary-ft text-light-ft round sm-size-ft" id="btn-suscripcion-ft" onclick="Suscribir(0)"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADLUlEQVRoge2ZTY8UVRSGnytx+FBnUKMxzoyABggLHRUQF8aMJkZN3Pm1If4Agjt/BCv8Cy50MyFuRFcmriBuiAsjhI0GRSXqmEzjTAIjPC76Ejsz3dV1bndVT4xPchd165w+79unq+r2LWgIdV49o3by+FQ92FS9Rsgmlt3Msjo3aX21yZ0YxNKk9dUm/5QGsdJEzbua+NAh2MSHNmXky8Jzk0XdqX6gnsrHBysu9v055lTO2TlZ9Rl1Qb2Uhf6tHsnzc+qSupLHmR4TR3OsOXdh0iZeVlc3fOt/qEcrcp7r061V9aU2tfcKWuhj4g7r6kfqMXVXHs/nufUBOavqU22b2KFeHCBoFC6qO0o0ld613gcOFeZWcQg4UZKYognq3cDPwEMlBWvwGzCXUlqPJJV05DWaMwHwMPBKNKnEyKsFOVFejyaUGDlSkBPlcDShxMjegpzGa5QY2V2QE+X+aELorqVOATeiRQqZity5oh25Nxg/CvdEgv830gL3RYKjRvYE40fhsUhw1Eib2zmhWlEjB4Lxo9CokReD8aPwQiS49nPE7sbaT2E55Uh3FfxLneBIR94q01NMAt6MBA9F3QZcBp4oFFXKD8D+lNKtYYF1O/Ie7ZsA2AccrxM4tCPqLPAtBQu5MbEMPJlS+rUqqLIj6jRwlsmZAHgQ+EytfNIPNKI+DpwDnh6zsBIOA+fUfaEsddHuRttW43d1sa6Jd9WbExZcxU317Y26N13s6lVgNtTC9rmaUprvneh3jYSWzxNik8Z+Rr5oQcionN040e+n9SjwFe2udCNcBhZTStd6Jzd1JC/SngE+BNba0VaLNeA08OxGEzDkyW73gfgO8AZwDHikCYUVXAO+Bj4HllJKnUGB0e2gPXR3zPfS/ds7DzwATAMzefT+r5/h367fBnrf6P6Vj1eADvAn8CNwJY9LKaUrEX3/CcKvFaqwu6zpAHeW3WsppRv53HZgV57fBkynlL4fV+1xG7lO/S2jTkppZly1x/2e/buGYocybiOfBGI/HnPt8aFuV7+psfC7YHdDfOuizg4xcyGvHrY+6pR6Uj2vXs/jvHqiqU78A+gK5qUW41iWAAAAAElFTkSuQmCC" id="img-suscripcion-ft" class="img-logo-ft"><span id="txt-suscripcion-ft"></span></a> <script> setSuscripcion({ persona : { sitio: { idSitio: 266 }, segmento: { idSegmento: 5388 }}, origen: { idOrigen: 1 }, token: '' }); </script>
 
-            return null;
-        }
-        async function PostSuscripcion(body) {
-            let response = useFetch(`${xUrlApi}/api/Fidelitytools/Suscripcion`, 'POST', undefined, body);
+    <!-- Automatico: 0 Segundos -->
+    <!-- <a style="display:none;" id="btn-suscripcion-ft"></a> 
+    <script>
+        suscribirAutomaticamente = true;
+    </script> -->
 
-            if (response.status === 201) {
-                document.querySelector('#btn-suscripcion-ft').style.display = 'none';
-            }
-        }
+    <!-- Automatico: Con segundos -->
+    <!-- <a style="display:none;" id="btn-suscripcion-ft"></a>
+    <script>
+        suscribirAutomaticamente = true;
+        segundos = 5;
+    </script> -->
 
-        //Section: ServiceWorker
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register(`${xUrlSW}`)
-                .then((registration) => {
-                    console.log('Service Worker registration completed with scope: ',
-                        registration.scope)
-                }, (err) => {
-                    console.log('Service Worker registration failed', err)
-                })
-        })
+    <!-- Con boton de suscripcion -->
+    <!-- <a class="btn bg-primary-ft text-light-ft round md-size-ft" id="btn-suscripcion-ft" onclick="Suscribir(0)" style="visibility: hidden;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADLUlEQVRoge2ZTY8UVRSGnytx+FBnUKMxzoyABggLHRUQF8aMJkZN3Pm1If4Agjt/BCv8Cy50MyFuRFcmriBuiAsjhI0GRSXqmEzjTAIjPC76Ejsz3dV1bndVT4xPchd165w+79unq+r2LWgIdV49o3by+FQ92FS9Rsgmlt3Msjo3aX21yZ0YxNKk9dUm/5QGsdJEzbua+NAh2MSHNmXky8Jzk0XdqX6gnsrHBysu9v055lTO2TlZ9Rl1Qb2Uhf6tHsnzc+qSupLHmR4TR3OsOXdh0iZeVlc3fOt/qEcrcp7r061V9aU2tfcKWuhj4g7r6kfqMXVXHs/nufUBOavqU22b2KFeHCBoFC6qO0o0ld613gcOFeZWcQg4UZKYognq3cDPwEMlBWvwGzCXUlqPJJV05DWaMwHwMPBKNKnEyKsFOVFejyaUGDlSkBPlcDShxMjegpzGa5QY2V2QE+X+aELorqVOATeiRQqZity5oh25Nxg/CvdEgv830gL3RYKjRvYE40fhsUhw1Eib2zmhWlEjB4Lxo9CokReD8aPwQiS49nPE7sbaT2E55Uh3FfxLneBIR94q01NMAt6MBA9F3QZcBp4oFFXKD8D+lNKtYYF1O/Ie7ZsA2AccrxM4tCPqLPAtBQu5MbEMPJlS+rUqqLIj6jRwlsmZAHgQ+EytfNIPNKI+DpwDnh6zsBIOA+fUfaEsddHuRttW43d1sa6Jd9WbExZcxU317Y26N13s6lVgNtTC9rmaUprvneh3jYSWzxNik8Z+Rr5oQcionN040e+n9SjwFe2udCNcBhZTStd6Jzd1JC/SngE+BNba0VaLNeA08OxGEzDkyW73gfgO8AZwDHikCYUVXAO+Bj4HllJKnUGB0e2gPXR3zPfS/ds7DzwATAMzefT+r5/h367fBnrf6P6Vj1eADvAn8CNwJY9LKaUrEX3/CcKvFaqwu6zpAHeW3WsppRv53HZgV57fBkynlL4fV+1xG7lO/S2jTkppZly1x/2e/buGYocybiOfBGI/HnPt8aFuV7+psfC7YHdDfOuizg4xcyGvHrY+6pR6Uj2vXs/jvHqiqU78A+gK5qUW41iWAAAAAElFTkSuQmCC"
+            id="img-suscripcion-ft" class="img-md-ft">
+        <span id="txt-suscripcion-ft"></span>
+    </a> -->
 
-        //Section Set Firebase 
-        GetPushConfig().then(config => {
-            if (config) {
-                firebase.initializeApp(config);
-                messaging = firebase.messaging();
-                messaging.usePublicVapidKey(config.parKey);
-            }
-        });
-
-        //Section: Firebase Functions
-        function Suscribir() {
-            messaging.requestPermission()
-                .then(() => {
-                    return messaging.getToken();
-                })
-                .then(token => {
-                    console.log(token);
-                    document.querySelector('#btn-suscripcion-ft').style.display = 'none';
-                    //TODO: Guardar token en Fidelitytools
-                })
-                .catch(err => {
-                    console.log('Ocurrio un error', err);
-                });
-        }
-
-        //Section: JS Default
-        async function useFetch(url, method, headers, body) {
-            var response = {};
-
-            try {
-                await fetch(url,
-                    {
-                        method,
-                        headers,
-                        body
-                    })
-                    .then(async res => {
-                        response.status = res.status;
-
-                        await res.text().then(content => {
-                            response.content = JSON.parse(content);
-                        });
-                    });
-
-                return response;
-            }
-            catch (ex) { console.log(ex); }
-        }
-    </script>
 </body>
 
 </html>

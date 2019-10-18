@@ -1,0 +1,196 @@
+/*** ToPersonalize ***/
+    .btn-ft {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+        #img-success{
+            display: none;
+        }
+        /* Colors */
+        .bg-primary-ft {
+            background-color: #007bff !important;
+        }
+
+        .bg-secondary-ft {
+            background-color: #6c757d !important;
+        }
+
+        .bg-success-ft {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger-ft {
+            background-color: #dc3545 !important;
+        }
+
+        .bg-warning-ft {
+            background-color: #ffc107 !important;
+        }
+
+        .bg-info-ft {
+            background-color: #17a2b8 !important;
+        }
+
+        .bg-light-ft {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-dark-ft {
+            background-color: #343a40 !important;
+        }
+
+        .bg-white-ft {
+            background-color: #fff !important;
+        }
+
+        .bg-transparent-ft {
+            background-color: transparent !important;
+        }
+
+        /* Text Colors */
+        .text-primary-ft {
+            color: #007bff !important;
+        }
+
+        .text-secondary-ft {
+            color: #6c757d !important;
+        }
+
+        .text-success-ft {
+            color: #28a745 !important;
+        }
+
+        .text-danger-ft {
+            color: #dc3545 !important;
+        }
+
+        .text-warning-ft {
+            color: #ffc107 !important;
+        }
+
+        .text-light-ft {
+            color: #f8f9fa !important;
+        }
+
+        .text-dark-ft {
+            color: #343a40 !important;
+        }
+
+        /*  Rectangular Size */
+        .sm-rectangle-ft {
+            height: 30pt;
+            width: 60pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-rectangle-ft {
+            height: 35pt;
+            width: 100pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-rectangle-ft {
+            height: 40pt;
+            width: 135pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Circular */
+        .round {
+            border-radius: 50%;
+        }
+
+        /* Size */
+        .sm-size-ft {
+            width: 27pt;
+            height: 32pt;
+
+            font-size: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-size-ft {
+            width: 38pt;
+            height: 43pt;
+
+            font-size: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lg-size-ft {
+            width: 50pt;
+            height: 55pt;
+
+            font-size: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Image */
+        .img-sm-ft {
+            max-width: 25pt;
+            max-height: 25pt;
+        }
+
+        .img-md-ft {
+            max-width: 30pt;
+            max-height: 30pt;
+        }
+
+        .img-lg-ft {
+            max-width: 40pt;
+            max-height: 40pt;
+        }
+
+        .img-logo-ft {
+            max-width: 18pt;
+            max-height: 18pt;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        .chk-bgcolor {
+            text-align: left;
+        }
+
+        #btn-suscripcion-ft {
+            overflow: hidden;
+            font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important;
+        }
+
+        #btn-suscripcion-ft:hover{
+            cursor: pointer;
+        }
